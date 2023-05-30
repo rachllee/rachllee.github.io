@@ -170,6 +170,10 @@
     background-color: #efe4e4;
 }
 
+.about {
+    background-color: #efe4e4
+}
+
 .main__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -183,6 +187,19 @@
     max-width: 1300px;
     padding: 0 50px;
     
+}
+
+.summary__container {
+    display: grid;
+    align-items: left;
+    justify-self: left;
+    margin: 0 auto;
+    height: 90 vh;
+    background-color: #e6dbdb;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px; 
+    padding: 0 50 px;
 }
 
 .main__content h1{
@@ -214,4 +231,81 @@
     font-size: 1rem;
     font-weight: 700;
     color: #977878;
+}
+@media screen and (max-width: 768px){
+    .main__container {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+    }
+
+    .main__content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .main__content h1{
+        font-size: 2.5rem;
+        margin-top: 2rem;
+
+    }
+
+    
 } 
+
+.summary__content p {
+    font-family: "Verdana", sans-serif;
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+
+.coursework__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.coursework__box {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.coursework__content h3 {
+    margin-top: 0;
+}
+
+.coursework__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: "Verdana", sans-serif;
+    font-size: 12px;
+}
+
+.coursework__list li {
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-family: "Verdana", sans-serif;
+}
+
+
+
+
+
+@media screen and (max-width: 480px) {
+
+    .main__content h1{
+        font-size: 2rem;
+        margin-top: 3rem;
+
+    }
+
+    .coursework__grid {
+        grid-template-columns: 1fr;
+    }
+}
