@@ -40,3 +40,37 @@ if (storedTheme) {
     setTheme(prefersDarkMode ? 'dark' : 'light');
 }
 
+const orbsContainer = document.querySelector('.main__container');
+
+
+const createOrb = () => {
+    const orb = document.createElement('div');
+    orb.classList.add('orb');
+    orbsContainer.appendChild(orb);
+    return orb;
+};
+
+const positionOrbRandomly = (orb) => {
+    const containerRect = orbsContainer.getBoundingClientRect();
+    const containerWidth = containerRect.width;
+    const containerHeight = containerRect.height;
+
+    const randomX = Math.random() * (containerWidth - 20);
+    const randomY = Math.random() * (containerHeight - 20);
+
+    orb.style.left = `${randomX}px`;
+    orb.style.top = `${randomY}px`;
+};
+
+const createAndPositionOrbs = (numOrbs) => {
+    for (let i =0; i < numOrbs; i++) {
+        const orb = createOrb();
+        positionOrbRandomly(orb);
+    }
+};
+
+const numOrbs = 10;
+createAndPositionOrbs(numOrbs);
+
+
+

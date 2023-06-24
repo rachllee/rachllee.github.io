@@ -15,6 +15,7 @@
     --button-color: #fff;
     --box-color: #f2f2f2;
     --bar-color: #977878;
+    --orb-color: #ffffff8f;
 }
 
 [data-theme='dark'] {
@@ -26,6 +27,7 @@
     --button-color: #9d3488;
     --box-color: #9c81a775;
     --bar-color: #361c40;
+    --orb-color: #fcf52b;
 }
 
 .navbar {
@@ -258,6 +260,8 @@
     font-size: 7px;
 }
 
+
+  
 .main {
     background-color: var(--background-color);
     transition: background-color 300ms ease, color 300ms ease;
@@ -304,6 +308,7 @@
     background-position: -100%;
 
     animation: animatedText 3s infinite alternate-reverse;
+    z-index: 2;
 
 }
 
@@ -316,7 +321,38 @@
     color: var(--text-color);
     font-size: 12px;
     transition: background-color 300ms ease, color 300ms ease;
+    z-index: 2;
 }
+
+.orb {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--orb-color);
+    pointer-events: auto; 
+    cursor: pointer;
+    animation-name: float;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s ease-in-out;
+    
+  }
+
+  @keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+  }
+
 
 footer {
     background-color: var(--navbar-color);
